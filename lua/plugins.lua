@@ -57,7 +57,10 @@ packer.startup(function(use)
     },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
-  use "joshdick/onedark.vim"
+
+
+  use 'navarasu/onedark.nvim'
+  
   use {
     "williamboman/nvim-lsp-installer",
     "neovim/nvim-lspconfig",

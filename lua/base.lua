@@ -41,3 +41,7 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
+--omnisharp
+OmniSharp_translate_cygwin_wsl = 1
+OmniSharp_popup = 1
+OmniSharp_selector_findusages = 'fzf'

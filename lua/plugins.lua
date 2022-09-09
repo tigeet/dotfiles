@@ -90,7 +90,11 @@ use({
 	end,
 })
 
-
+-- indent line
+use 'Yggdroot/indentLine'
+use 'OmniSharp/omnisharp-vim'
+use 'dense-analysis/ale'
+use 'mg979/vim-visual-multi'
 -- rename, references etc
 -- Plug 'nvim-lua/popup.nvim'
 -- Plug 'nvim-lua/plenary.nvim'

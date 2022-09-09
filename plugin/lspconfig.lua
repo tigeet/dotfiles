@@ -124,3 +124,15 @@ vim.diagnostic.config({
 })
 
 -- C#
+-- csharp_ls
+-- nvim_lsp.csharp_ls.setup{}
+--omnisharp
+local pid = vim.fn.getpid()
+nvim_lsp.omnisharp.setup {
+    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+      on_attach = function(_, bufnr)
+          vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+     end,
+     
+       cmd = { "/home/koido/.cache/omnisharp-vim/omnisharp-roslyn/run", "--languageserver" , "--hostPID", tostring(pid) },
+}

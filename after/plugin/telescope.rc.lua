@@ -6,7 +6,7 @@ local builtin = require("telescope.builtin")
 local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
 end
-
+telescope.load_extension "file_browser"
 local fb_actions = require "telescope".extensions.file_browser.actions
 
 telescope.setup {
@@ -41,7 +41,6 @@ telescope.setup {
   },
 }
 
-telescope.load_extension("file_browser")
 
 vim.keymap.set('n', ';f',
   function()

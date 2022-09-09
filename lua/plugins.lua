@@ -32,11 +32,11 @@ packer.startup(function(use)
   }
   use 'kyazdani42/nvim-web-devicons' -- File icons
   use 'nvim-telescope/telescope.nvim'
-  use 'nvim-telescope/telescope-file-browser.nvim'
+  use { "nvim-telescope/telescope-file-browser.nvim" }
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
   use 'norcalli/nvim-colorizer.lua'
-  use 'folke/zen-mode.nvim'
+  -- use 'folke/zen-mode.nvim'
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
@@ -58,17 +58,43 @@ packer.startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
-
+  use "nvim-lua/plenary.nvim"
   use 'navarasu/onedark.nvim'
   
   use {
     "williamboman/nvim-lsp-installer",
-    "neovim/nvim-lspconfig",
+    -- "neovim/nvim-lspconfig", -- duplicate 
   }
+
   use {
     'numToStr/Comment.nvim',
     config = function ()
       require('Comment').setup()
     end
   }
+
+-- auto rename variables
+use {
+  'filipdutescu/renamer.nvim',
+  branch = 'master',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
+
+use({
+	"Pocco81/auto-save.nvim",
+	config = function()
+		 require("auto-save").setup {
+			-- your config goes here
+			-- or just leave it empty :)
+		 }
+	end,
+})
+
+
+-- rename, references etc
+-- Plug 'nvim-lua/popup.nvim'
+-- Plug 'nvim-lua/plenary.nvim'
+-- Plug 'nvim-lua/popup.nvim'
+-- Plug 'RishabhRD/lspactions'
+
 end)
